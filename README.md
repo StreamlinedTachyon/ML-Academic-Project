@@ -201,7 +201,3 @@ This repository is released under the MIT License. See LICENSE for details.
 Repository owner: StreamlinedTachyon  
 GitHub: https://github.com/StreamlinedTachyon/ML-Academic-Project
 
-Enjoy experimenting — if you'd like, I can:
-- produce a requirements.txt from the notebooks,
-- convert selected notebooks into Python modules,
-- or draft short CONTRIBUTING.md and a simple example script to run a training end-to-end.
