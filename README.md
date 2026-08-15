@@ -108,16 +108,10 @@ To run these pipelines and verify the mathematical benchmarks locally:
 
 **1. Clone the Repository:**
 ```bash
-git clone [https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking.git](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking.git)
+git clone https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking.git
 cd Machine-Learning-Algorithm-Optimization-and-Benchmarking
-
-
-2. Initialize Environment:
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install numpy pandas scikit-learn matplotlib seaborn scipy
-
-3. Execute Analytics:
 jupyter notebook
-
 
