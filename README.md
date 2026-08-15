@@ -1,277 +1,123 @@
-# Machine Learning Engineering Portfolio: Algorithms from Scratch & Advanced Optimization
+# 🚀 Machine Learning Engineering Portfolio: Algorithms from Scratch & Advanced Optimization
 
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-Linear%20Algebra-orange.svg)](https://numpy.org/)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-Pipeline%20%26%20CV-green.svg)](https://scikit-learn.org/)
+[![Status](https://img.shields.io/badge/Benchmarks-Verified-brightgreen.svg)]()
 
-# Machine Learning & Predictive Modeling Pipelines
+## 📌 Note to the Evaluation Panel
+Welcome to my Machine Learning Engineering portfolio. In mission-critical environments, treating AI as a "black box" is a liability. This repository was designed to demonstrate my ability to develop **core machine learning algorithms from first mathematical principles** (pure NumPy) alongside **production-grade optimized pipelines**. 
 
-This repository contains a collection of **end-to-end predictive modeling pipelines** and **from-scratch mathematical implementations** of core machine learning algorithms.
-
-The project demonstrates:
-
-1. **From-Scratch Algorithm Engineering:** Linear algebra and probabilistic mechanics implemented in pure NumPy without high-level wrappers ($K$-Means++, GMM via Expectation-Maximization, PCA with Spectral Whitening, LDA via Generalized Eigenvalue Decomposition, and Regularized Logistic Regression).
-2. **Robust Data Engineering Pipelines:** Leak-free preprocessing pipelines covering outlier-resistant statistical imputation, custom Z-score standardization, and eigenvalue whitening across high-dimensional spatial and clinical datasets.
-3. **Rigorous Optimization & Generalization:** 5-Fold Stratified Cross-Validation, exhaustive Grid Search tuning, Cost-Complexity Pruning ($ccp\_\alpha$), and multi-metric evaluation (Precision, Recall, F1-Score) to mitigate model variance.
-
----
-
-## 📂 Repository Structure & Quick Links
-
-| Module Focus | Jupyter Notebook Link |
-| --- | --- |
-| **Supervised Learning & Overfitting Mitigation** | [Decision-tree-SVM-code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Decision-tree-SVM-code.ipynb) |
-| **GMM & Expectation-Maximization** | [GMM-for-clustering-and-outliar-detection.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/GMM-for-clustering-and-outliar-detection.ipynb) |
-| **K-Means++ & Cluster Stability** | [K-means_code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/K-means_code.ipynb) |
-| **PCA & LDA (From Scratch)** | [PCA-LDA Medical_Dataset.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/PCA-LDA%20Medical_Dataset.ipynb) |
-| **High-Dim PCA & Naive Bayes** | [Naive-Bayes-Code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Naive-Bayes-Code.ipynb) |
-| **Medical Logistic Regression (From Scratch)** | [Logistic-Regresison-Code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Logistic-Regresison-Code.ipynb) |
-| **Distance Metric Optimization (KNN)** | [KNN_Geospatial.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/KNN_Geospatial.ipynb) |
+By engineering these systems from the ground up, I ensure strict data isolation, complete control over mathematical convergence, and aggressive mitigation of model overfitting—resulting in highly reliable, generalized predictive systems.
 
 ---
 
-## 📊 Comprehensive Benchmark Suite
+## 🛠️ Core Competencies & Technology Matrix
 
----
-
-### Module 1: Supervised Learning, Hyperparameter Tuning & Overfitting Mitigation
-
-🔗 **[View Notebook: Decision-tree-SVM-code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Decision-tree-SVM-code.ipynb)**
-
-* **Dataset:** California Housing Geospatial Benchmark (5,000 samples, 8 spatial/demographic features)
-* **Task:** 3-Class Spatial Value Classification (`Low`, `Medium`, `High`)
-* **Validation Scheme:** 5-Fold Stratified Cross-Validation (`StratifiedKFold`) + `GridSearchCV`
-
-#### 1. Baseline Model Comparison & Execution Efficiency
-
-| Model | Hyperparameter Grid | Optimization Time | Train F1 | Test F1 | Train/Test Gap | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| **Logistic Regression** | `C: [0.1, 1, 10]`, `penalty: ['l2']` | 4.80s | 0.7196 | 0.7048 | **0.0148** | Optimal Generalization |
-| **Support Vector Machine (SVM)** | `C: [0.1, 1, 10]`, `kernel: ['linear', 'rbf']` | 2.83s | 0.8026 | 0.7215 | 0.0811 | Slight Overfitting |
-| **Decision Tree (CART)** | `max_depth: [5, 10, 15]`, `min_samples_split: [2, 10, 20]` | **0.35s** | 0.8654 | 0.7115 | 0.1539 | High Overfitting |
-
-#### 2. Advanced Cost-Complexity Pruning ($ccp\_\alpha$) on Decision Tree
-
-To resolve the training data memorization of the baseline tree, minimal cost-complexity pruning was performed across the full pruning path:
-
-* **Optimal Penalty Parameter:** `ccp_alpha = 0.0022`
-* **Pre-Pruning:** Train F1: `0.8654` | Test F1: `0.7115` | Gap: `0.1539`
-* **Post-Pruning:** Train F1: `0.7663` | Test F1: **`0.7276`** | Gap: **`0.0387`**
-* **Result:** **74.8% reduction in generalization variance**, elevating test performance beyond the tuned RBF-SVM while maintaining sub-second training speed.
-
----
-
-### Module 2: Unsupervised Clustering & Expectation-Maximization (From Scratch)
-
-#### A. Gaussian Mixture Model (GMM) via Expectation-Maximization
-
-🔗 **[View Notebook: GMM-for-clustering-and-outliar-detection.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/GMM-for-clustering-and-outliar-detection.ipynb)**
-
-* **Formulation:** Probabilistic soft clustering optimizing mixture weights ($\pi_k$), cluster centroids ($\mu_k$), and full covariance matrices ($\Sigma_k$) with Tikhonov damping ($\epsilon = 10^{-6}\mathbf{I}$) to guarantee positive semi-definiteness.
-* **Convergence Threshold:** Absolute log-likelihood change $\Delta \mathcal{L} < 10^{-4}$.
-
-| Iteration | Log-Likelihood ($\mathcal{L}$) | Step $\Delta \mathcal{L}$ | Cumulative $\Delta \mathcal{L}$ Gain | Convergence Status |
-| --- | --- | --- | --- | --- |
-| **Iter 1** | `-343.2978` | — | — | Initial Assignment |
-| **Iter 10** | `-205.2954` | $+0.5358$ | $+138.0024$ | Active EM Ascent |
-| **Iter 20** | `-180.5395` | $+0.6364$ | $+162.7583$ | Near Plateau |
-| **Iter 28** | **`-180.1855`** | $< 10^{-4}$ | **$+163.1123$** | **Optimal Convergence** |
-
-* **Anomaly Detection:** Evaluated sample log-probabilities via `score_samples()`; an enforced 5th-percentile cutoff threshold identified **8 distinct boundary anomalies**.
-
-#### B. $K$-Means++ Clustering with Geometric Optimization
-
-🔗 **[View Notebook: K-means_code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/K-means_code.ipynb)**
-
-* **Algorithm:** Vectorized Expectation-Maximization with probabilistic distance-weighted initialization ($D(x)^2 / \sum D(x)^2$).
-* **Custom vs. Production Benchmark ($k = 6$):** The Custom NumPy Engine achieved a WCSS of 17,162.85 in just 0.0687s, coming within $\Delta = 0.17$ of `scikit-learn`'s C/Cython implementation, proving strict mathematical accuracy.
-
-| Cluster Count ($k$) | WCSS (Inertia) | Mean Silhouette Score | Cluster Geometry Verdict |
-| --- | --- | --- | --- |
-| $k = 2$ | 24,891.12 | 0.2841 | Under-partitioned |
-| **$k = 3$** | **20,114.65** | **0.3421** | **Optimal Global Cohesion & Separation** |
-| $k = 4$ | 18,920.40 | 0.2910 | Marginal boundary overlap |
-
----
-
-### Module 3: Dimensionality Reduction, Scatter Optimization & Whitening (From Scratch)
-
-#### A. Principal Component Analysis (PCA) & Spectral Whitening
-
-🔗 **[View Notebook: PCA-LDA Medical_Dataset.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/PCA-LDA%20Medical_Dataset.ipynb)**
-
-* **Mathematical Pipeline:** Covariance Matrix ($\Sigma$) $\rightarrow$ Eigen-Decomposition ($\mathbf{\Lambda}, \mathbf{V}$) $\rightarrow$ Spectral Whitening Transformation ($X_{\text{whitened}} = \frac{X_{\text{centered}} \cdot \mathbf{V}_k}{\sqrt{\mathbf{\Lambda}_k + \epsilon}}$)
-
-| Dataset | Raw Dimensions | Imputation Strategy | Target Subspace | Total Retained Variance |
-| --- | --- | --- | --- | --- |
-| **Breast Cancer** | 30 | 5% Synthetic MCAR (Mean Imputed) | **2 Components** | **60.48%** (PC1: 42.11%, PC2: 18.37%) |
-
-#### B. Linear Discriminant Analysis (LDA) from Scratch
-
-* **Discriminative Efficiency:** Evaluated the $30 \times 30$ Within-Class Scatter Matrix ($S_w$) and Between-Class Scatter Matrix ($S_b$). Compressed the space into a **1D Linear Discriminant (`LD1`)**, capturing **100.00% of the class-separability variance**.
-
-#### C. High-Dimensional Arrhythmia Diagnostic Pipeline
-
-🔗 **[View Notebook: Naive-Bayes-Code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Naive-Bayes-Code.ipynb)**
-
-* **Preprocessing:** Reduced 279 clinical & ECG features (408 missing entries median-imputed, 17 zero-variance channels dropped).
-* **PCA Compression:** Subspace retained **66.50% variance** across 30 principal components.
-* **Supervised Classification:** 5-Fold Stratified `GridSearchCV` on Gaussian Naive Bayes (`var_smoothing = 0.1`) yielded an isolated Holdout F1-Score of **0.6582** (Precision: 0.7027).
-
----
-
-### Module 4: Medical Supervised Learning Pipeline (From Scratch)
-
-🔗 **[View Notebook: Logistic-Regresison-Code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Logistic-Regresison-Code.ipynb)**
-
-* **Dataset:** Parkinson's Disease Acoustic Dataset (UCI).
-* **Profile:** 195 Patient Samples, 22 Biomechanical Acoustic Features (75.38% Positive / 24.62% Negative).
-* **Architecture:** Custom Logistic Regression with Binary Cross-Entropy Loss and Analytical $L_2$ Regularization. A custom, leak-free **Z-Score Standardization** engine and **Stratified 5-Fold Split Generator** were programmed from the ground up.
-
-#### Grid Search & Diagnostic Holdout Performance
-
-* **Grid Sweep:** $\alpha \in [0.01, 0.1, 0.5]$, $\lambda \in [0.01, 0.1, 1.0]$. Optimal configuration found at `Learning Rate = 0.5`, `Lambda = 0.01` with a peak CV F1-Score of **0.9132**.
-
-| Diagnostic Metric | Score | Clinical Interpretation |
-| --- | --- | --- |
-| **Loss Convergence** | **$0.6932 \rightarrow 0.2689$** | **61.2% cost reduction** via stable analytical gradient descent. |
-| **Precision** | **0.8961** | Low false positive rate; high certainty in clinical diagnosis. |
-| **Recall (Sensitivity)** | **0.9388** | Minimizes false negatives in patient screening. |
-| **F1-Score** | **0.9169** | Robust harmonic balance on imbalanced clinical data. |
-
----
-
-### Supplementary Module: Distance Metric Optimization
-
-🔗 **[View Notebook: KNN_Geospatial.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/KNN_Geospatial.ipynb)**
-
-* **Task:** Evaluated the impact of spatial distance metrics on lazy-learning classification algorithms (K-Nearest Neighbors).
-* **Results:** A robust `GridSearchCV` workflow established that Euclidean ($p=2$) peaked at $k=12$, while Manhattan ($L_1$) shifted the optimal neighborhood boundary to $k=13$, both achieving **100% test accuracy** while demonstrating how distance topology influences optimal neighborhood density.
-
----
-
-## 🛠️ Skills & Technology Matrix
-
-| Core Competency | Specific Implementations |
-| --- | --- |
+| Engineering Focus | Specific Implementations |
+| :--- | :--- |
 | **Mathematical ML (From Scratch)** | $K$-Means++, GMM (EM Algorithm), PCA (Eigenvalue Decomposition), LDA (Scatter Matrices), Logistic Regression (Analytical Gradients), Custom Z-Score Scaler. |
 | **Data Pipelines & Preprocessing** | Median/Mean Statistical Imputation, Zero-Variance Channel Filtering, Spectral Whitening, Multi-Class Quantile Binning. |
 | **Model Optimization** | Stratified $K$-Fold Cross-Validation, GridSearchCV, Cost-Complexity Pruning ($ccp\_\alpha$), SAGA Solver Regularization ($L_1/L_2$). |
 | **Diagnostic Evaluation** | Macro/Micro F1-Score, Precision-Recall Tradeoffs, Confusion Matrix Decomposition, Silhouette Analysis, WCSS/Elbow Tracking. |
-| **Libraries & Frameworks** | Python 3.10+, NumPy, Pandas, scikit-learn, SciPy, Matplotlib, Seaborn. |
-
-Welcome to my Machine Learning Portfolio. This repository contains a collection of Jupyter Notebooks demonstrating both **first-principles mathematical algorithm development** (built entirely from scratch using pure NumPy) and **production-grade ML pipelines** (using `scikit-learn`).
-
-I designed this repository to demonstrate my deep understanding of the mathematical engines powering modern AI, as well as my practical ability to optimize models, evaluate complex metrics, and aggressively mitigate overfitting.
 
 ---
 
-## 🛠 Key Skills Demonstrated
+## 📂 Repository Index & Technical Benchmarks
 
-* **Algorithms From Scratch:** Gaussian Mixture Models (EM Algorithm), Principal Component Analysis (Eigen Decomposition & Whitening), Linear Discriminant Analysis (Scatter Matrices), and K-Means++ (Probabilistic Initialization).
-* **Supervised Learning Pipelines:** Support Vector Machines, Logistic Regression, Decision Trees, and K-Nearest Neighbors.
-* **Overfitting Mitigation:** Cost-Complexity Pruning (CCP), L2 Regularization, and K-Fold Cross-Validation.
-* **Data Engineering:** Manual Z-score Standardization, Data Imputation, and Spatial Feature Engineering.
-* **Evaluation & Analytics:** Silhouette Scores, WCSS, Log-Likelihood convergence, Confusion Matrices, and Macro F1-Score optimization.
+The repository is divided into distinct operational modules. Each module targets a specific data challenge, from high-dimensional signal extraction to geospatial classification.
 
----
+### Module 1: Supervised Learning, Hyperparameter Tuning & Overfitting Mitigation
+🔗 **[View Source Code: Decision-tree-SVM-code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Decision-tree-SVM-code.ipynb)**
 
-## 📂 Repository Structure & Projects Overview
+*   **Objective:** Classify California Housing data into geospatial value zones while aggressively targeting and reducing training variance.
+*   **Validation Scheme:** 5-Fold Stratified Cross-Validation + `GridSearchCV`.
 
-### 1. Geospatial Classification & Cost-Complexity Pruning
+**Baseline Execution & Efficiency Benchmark:**
 
-**File:** `01_Geospatial_Classification_and_Pruning.ipynb`
+| Model | Optimization Time | Train F1 | Test F1 | Train/Test Gap | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Logistic Regression** | 4.80s | 0.7196 | 0.7048 | **0.0148** | Optimal Generalization |
+| **Support Vector Machine** | 2.83s | 0.8026 | 0.7215 | 0.0811 | Slight Overfitting |
+| **Decision Tree (CART)** | **0.35s** | 0.8654 | 0.7115 | 0.1539 | High Overfitting |
 
-* **Objective:** Classify California Housing data into Low, Medium, and High-value zones using spatial and demographic features.
-* **Highlights:**
-* Implemented an end-to-end `scikit-learn` Pipeline with `StratifiedKFold` and `GridSearchCV`.
-* Systematically benchmarked Logistic Regression, Decision Trees, and SVMs using Macro F1-Scores.
-* Conducted an **Aggressive Overfitting Analysis** to measure the Train/Test performance gap.
-* **Advanced Mitigation:** Extracted the pruning path of an overfitted Decision Tree and implemented **Cost-Complexity Pruning (ccp_alpha)** to collapse the Train/Test gap and maximize generalization.
-
-
-
-### 2. Gaussian Mixture Model (GMM) & Anomaly Detection From Scratch
-
-**File:** `02_GMM_From_Scratch.ipynb`
-
-* **Objective:** Build a probabilistic clustering engine without using high-level ML libraries.
-* **Highlights:**
-* Implemented the **Expectation-Maximization (EM)** algorithm entirely in `numpy`.
-* Manually programmed the E-Step (Responsibility calculation via Multivariate Gaussian PDF) and M-Step (Mean, Covariance, and Weight updates).
-* Monitored mathematical convergence via Log-Likelihood tracking.
-* Developed a probabilistic **Outlier Detection** system by isolating data points falling below the 5th percentile of the probability density threshold.
-
-
-
-### 3. Dimensionality Reduction (PCA & LDA) & K-Means++ From Scratch
-
-**File:** `03_DimReduction_and_KMeans_Scratch.ipynb`
-
-* **Objective:** Reduce the dimensionality of a high-dimensional medical dataset (Breast Cancer) and build an optimized K-Means engine.
-* **Highlights:**
-* **PCA From Scratch:** Calculated Covariance matrices, sorted Eigenvalues/Eigenvectors, and implemented Eigenvalue Decomposition (Whitening).
-* **LDA From Scratch:** Computed Within-Class and Between-Class Scatter Matrices to project data maximizing class separability.
-* **K-Means++:** Implemented proportional probability distance algorithms `D(x)^2` to smartly initialize centroids and avoid local minima.
-* **Engineering Benchmark:** Benchmarked the custom NumPy K-Means against `scikit-learn`'s C-level Cython implementation, proving exact mathematical parity in WCSS (Within-Cluster Sum of Squares) scores.
-
-
-
-### 4. K-Nearest Neighbors (KNN) Custom CV & Hyperparameter Tuning
-
-**File:** `04_KNN_Optimization.ipynb`
-
-* **Objective:** Build a robust validation pipeline for instance-based learning.
-* **Highlights:**
-* Programmed a manual K-Fold Cross-Validation loop to evaluate `k` values from 1 to 30.
-* Visualized the Cross-Validated Error Rate to identify the optimal number of neighbors.
-* Upgraded the distance metric to `Manhattan` distance and validated improvements using `GridSearchCV`.
-
-
+**Advanced Cost-Complexity Pruning ($ccp\_\alpha$):**
+To resolve the baseline Decision Tree's data memorization, minimal cost-complexity pruning was performed. 
+*   **Post-Pruning Metric:** Applying an optimal penalty of `ccp_alpha = 0.0022` collapsed the Train/Test gap from `0.1539` down to **`0.0387`**. 
+*   **Result:** Generalization variance was reduced by **74.8%**, allowing the Tree to outperform the SVM on unseen test data while maintaining sub-second training speeds.
 
 ---
 
-## ⚙️ Prerequisites & Installation
+### Module 2: Unsupervised Clustering & Probabilistic Mechanics (From Scratch)
 
-To run the notebooks locally, you will need Python 3.8+ and the following libraries installed.
+**A. Gaussian Mixture Model (GMM) via Expectation-Maximization**
+🔗 **[View Source Code: GMM-for-clustering-and-outliar-detection.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/GMM-for-clustering-and-outliar-detection.ipynb)**
+*   **Mechanics:** Pure NumPy implementation optimizing mixture weights ($\pi_k$), centroids ($\mu_k$), and full covariance matrices ($\Sigma_k$) with Tikhonov damping ($\epsilon = 10^{-6}\mathbf{I}$) to prevent singularity.
+*   **Convergence:** Achieved strict monotonic log-likelihood maximization, converging at $\mathcal{L} =$ **`-180.1855`** in exactly 28 iterations.
+*   **Anomaly Detection:** Evaluated sample log-probabilities via `score_samples()`. An enforced 5th-percentile cutoff threshold successfully flagged **8 distinct boundary anomalies**.
 
+**B. $K$-Means++ Clustering with Geometric Optimization**
+🔗 **[View Source Code: K-means_code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/K-means_code.ipynb)**
+*   **Mechanics:** Vectorized EM with probabilistic distance-weighted initialization ($D(x)^2 / \sum D(x)^2$).
+*   **Engine Benchmark:** The Custom NumPy Engine computed a Within-Cluster Sum of Squares (WCSS) of 17,162.85 in just 0.0687s, coming within $\Delta = 0.17$ of `scikit-learn`'s production C-level implementation, verifying strict mathematical accuracy.
+
+---
+
+### Module 3: Dimensionality Reduction & Signal Extraction (From Scratch)
+
+**A. Principal Component Analysis (PCA) & Linear Discriminant Analysis (LDA)**
+🔗 **[View Source Code: PCA-LDA Medical_Dataset.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/PCA-LDA%20Medical_Dataset.ipynb)**
+*   **Methodology:** Hand-coded Covariance Matrix construction $\Sigma = \frac{1}{N-1}X^T X$, Eigen-Decomposition, and Spectral Whitening Transformations. For LDA, solved the generalized eigenvalue problem $S_w^{-1} S_b \mathbf{w} = \lambda \mathbf{w}$.
+*   **Result (Breast Cancer Dataset):** PCA captured **60.48% variance** in just 2 components. LDA compressed the 30-D space into a 1D discriminant capturing **100.00% of class-separability variance**.
+
+**B. High-Dimensional Arrhythmia Diagnostic Pipeline**
+🔗 **[View Source Code: Naive-Bayes-Code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Naive-Bayes-Code.ipynb)**
+*   **Preprocessing:** Outlier-resistant median statistical imputation (resolved 408 missing entries) and zero-variance channel filtering on 279-D ECG features. 
+*   **Result:** Reduced dimensions by **88.5%** (retaining 66.50% variance). The downstream Gaussian Naive Bayes model (`var_smoothing = 0.1`) maintained a robust **0.7027 Precision** on an unseen holdout set.
+
+---
+
+### Module 4: Medical Supervised Learning & Logistic Regression (From Scratch)
+🔗 **[View Source Code: Logistic-Regresison-Code.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/Logistic-Regresison-Code.ipynb)**
+
+*   **Task:** Parkinson's Disease acoustic diagnostic classification (75.38% Positive / 24.62% Negative class imbalance).
+*   **Architecture:** Custom Logistic Regression utilizing Binary Cross-Entropy Loss, Analytical $L_2$ Regularization, and a leak-free **Z-Score Standardization** engine programmed from scratch.
+
+**Diagnostic Holdout Performance (Optimal: $\alpha = 0.5$, $\lambda = 0.01$):**
+
+| Diagnostic Metric | Score | Clinical Interpretation |
+| :--- | :---: | :--- |
+| **Loss Convergence** | **$0.6932 \rightarrow 0.2689$** | **61.2% cost reduction** via stable analytical gradient descent. |
+| **Precision** | **0.8961** | Low false positive rate; high certainty in clinical diagnosis. |
+| **Recall (Sensitivity)** | **0.9388** | Minimizes false negatives in patient screening. |
+| **F1-Score** | **0.9169** | Robust harmonic balance mitigating class imbalance. |
+
+---
+
+### Module 5: Distance Metric Topology Optimization (KNN)
+🔗 **[View Source Code: KNN_Geospatial.ipynb](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking/blob/main/KNN_Geospatial.ipynb)**
+
+*   **Objective:** Evaluate the impact of spatial distance metrics on lazy-learning classification.
+*   **Result:** `GridSearchCV` established that Euclidean distance ($p=2$) peaked at $k=12$, while Manhattan distance ($L_1$) shifted the optimal neighborhood boundary to $k=13$. Both distance topologies successfully sustained **100% test accuracy**.
+
+---
+
+## 🚀 Environment Setup & Execution
+
+To run these pipelines and verify the mathematical benchmarks locally:
+
+**1. Clone the Repository:**
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/ml-portfolio.git
-cd ml-portfolio
+git clone [https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking.git](https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking.git)
+cd Machine-Learning-Algorithm-Optimization-and-Benchmarking
 
-# Install required dependencies
+
+2. Initialize Environment:
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install numpy pandas scikit-learn matplotlib seaborn scipy
 
-```
-
----
-
-## 🚀 How to Run
-
-Simply start a Jupyter Notebook server in the root directory:
-
-```bash
+3. Execute Analytics:
 jupyter notebook
 
-```
-
-Navigate to any of the `.ipynb` files. All cells are pre-formatted to print execution times, convergence metrics, and evaluation reports directly to the standard output.
-
----
-
-## 💡 Note to Interviewers
-
-While using high-level APIs like `.fit()` and `.predict()` is essential for rapid development, I built the **"From Scratch"** notebooks in this repository to prove my grasp of the underlying Linear Algebra and Calculus that power these frameworks.
-
-By avoiding black-box implementations where appropriate, I am able to debug complex convergence issues, prevent data leakage in pipelines, and write highly optimized, vectorized code.
-
-## Requirements
-These notebooks rely on the standard Python scientific stack. A minimal set of packages:
-
-* Python 3.8+ (notebooks show Python 3.12 metadata)
-* jupyter (or jupyterlab / notebook)
-* numpy
-* pandas
-* scikit-learn
-* matplotlib
-* seaborn
-* scipy
 
