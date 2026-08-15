@@ -118,6 +118,3 @@ These notebooks rely on the standard Python scientific stack. A minimal set of p
 * seaborn
 * scipy
 
-If you want reproducible env management, create a `requirements.txt` or `environment.yml`. Example pip list (run from an activated venv):
-```bash
-pip install jupyter numpy pandas scikit-learn matplotlib seaborn scipy
