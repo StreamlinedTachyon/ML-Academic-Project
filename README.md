@@ -101,17 +101,24 @@ To resolve the baseline Decision Tree's data memorization, minimal cost-complexi
 *   **Result:** `GridSearchCV` established that Euclidean distance ($p=2$) peaked at $k=12$, while Manhattan distance ($L_1$) shifted the optimal neighborhood boundary to $k=13$. Both distance topologies successfully sustained **100% test accuracy**.
 
 ---
-
 ## 🚀 Environment Setup & Execution
 
 To run these pipelines and verify the mathematical benchmarks locally:
 
-**1. Clone the Repository:**
 ```bash
+# 1. Clone and navigate into the repository
 git clone https://github.com/StreamlinedTachyon/Machine-Learning-Algorithm-Optimization-and-Benchmarking.git
 cd Machine-Learning-Algorithm-Optimization-and-Benchmarking
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install numpy pandas scikit-learn matplotlib seaborn scipy
-jupyter notebook
 
+# 2. Create and activate virtual environment
+python -m venv venv
+
+# Linux / macOS:
+source venv/bin/activate
+
+# Windows (CMD / PowerShell):
+# venv\Scripts\activate
+
+# 3. Install dependencies and start Jupyter
+pip install numpy pandas scikit-learn matplotlib seaborn scipy jupyter notebook
+```
