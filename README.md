@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-Linear%20Algebra-orange.svg)](https://numpy.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-Pipeline%20%26%20CV-green.svg)](https://scikit-learn.org/)
-![Status](https://img.shields.io/badge/Benchmarks-Verified-brightgreen.svg)(#-repository-index--technical-benchmarks)
+[![Status](https://img.shields.io/badge/Benchmarks-Verified-brightgreen.svg)](#-repository-index--technical-benchmarks)
 
 ## 📌 Note to the Evaluation Panel
 Welcome to my Machine Learning Engineering portfolio. In mission-critical environments, treating AI as a "black box" is a liability. This repository was designed to demonstrate my ability to develop **core machine learning algorithms from first mathematical principles** (pure NumPy) alongside **production-grade optimized pipelines**. 
